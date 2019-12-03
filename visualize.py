@@ -473,10 +473,13 @@ def create_plot_animation(plt, trajs, shuffled_ped_ids, target_id, inv_lookup ,s
                  transform=plt.gca().transAxes, fontsize="large")
         frame_obj.append(title)
         frames.append(frame_obj)
-    
+
+    print(frames)
     plt.gca().legend(loc='best')
     ani = animation.ArtistAnimation(plt.gcf(), frames, interval=1200, blit=False, repeat_delay=1000)
     ani.save(plot_directory+'/'+name+'.mp4')
+    # plt.show()
+    # ata
     print("Video creation ended.")
 
 def vectorize_traj(traj, nodesPresent, look_up):
